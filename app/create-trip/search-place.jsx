@@ -1,4 +1,4 @@
-import { useNavigation } from 'expo-router';
+import { useNavigation, useRouter } from 'expo-router';
 import { useContext, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { Colors } from '../../constants/Colors';
@@ -7,6 +7,7 @@ import { CreateTripContext } from '../../context/CreateTripContext';
 
 export default function SearchPlace() {
   const navigation = useNavigation();
+  const router = useRouter();
   const { tripData, setTripData } = useContext(CreateTripContext);
   useEffect(() => {
     navigation.setOptions({
@@ -43,6 +44,7 @@ export default function SearchPlace() {
               url: details?.url,
             },
           });
+          router.push('/create-trip/select-traveler');
         }}
         query={{
           key: process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY,
@@ -57,7 +59,7 @@ export default function SearchPlace() {
         }}
       />
       <View>
-        <Text>Result</Text>
+        <Text>Selected Location:</Text>
         <Text>{tripData?.locationInfo?.name}</Text>
         <Text>{tripData?.locationInfo?.coordinates?.lat}</Text>
         <Text>{tripData?.locationInfo?.coordinates?.lng}</Text>

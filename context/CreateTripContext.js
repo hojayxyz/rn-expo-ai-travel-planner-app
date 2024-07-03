@@ -4,10 +4,8 @@ export const CreateTripContext = createContext();
 
 export const CreateTripContextProvider = ({ children }) => {
   const [tripData, setTripData] = useState({
-    name: '',
-    coordinates: '',
-    photoRef: '',
-    url: '',
+    locationInfo: {},
+    traveler: {},
   });
   return (
     <CreateTripContext.Provider
