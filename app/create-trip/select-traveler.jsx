@@ -1,4 +1,4 @@
-import { useNavigation } from 'expo-router';
+import { useNavigation, useRouter } from 'expo-router';
 import { useContext, useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Colors } from '../../constants/Colors';
@@ -8,6 +8,7 @@ import { CreateTripContext } from '../../context/CreateTripContext';
 
 export default function SelectTraveler() {
   const navigation = useNavigation();
+  const router = useRouter();
   const [selectedTraveler, setSelectedTraveler] = useState(null);
   const { tripData, setTripData } = useContext(CreateTripContext);
 
@@ -54,7 +55,9 @@ export default function SelectTraveler() {
           )}
         />
       </View>
+
       <TouchableOpacity
+        onPress={() => router.push('/create-trip/select-dates')}
         style={{
           position: 'absolute',
           padding: 15,
