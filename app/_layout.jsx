@@ -1,6 +1,6 @@
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
-
+import { CreateTripContextProvider } from '../context/CreateTripContext';
 export default function RootLayout() {
   useFonts({
     Noto: require('../assets/fonts/NotoSansKR-Regular.ttf'),
@@ -11,8 +11,10 @@ export default function RootLayout() {
   });
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="index" />
-    </Stack>
+    <CreateTripContextProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+      </Stack>
+    </CreateTripContextProvider>
   );
 }
