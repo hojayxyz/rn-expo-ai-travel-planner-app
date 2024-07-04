@@ -9,20 +9,20 @@ export default function StartNewTripCard() {
     <View
       style={{
         padding: 20,
-        marginTop: 50,
+        marginTop: 20,
         display: 'flex',
         alignItems: 'center',
-        gap: 25,
+        gap: 20,
       }}
     >
       <Ionicons name="location-sharp" size={30} color={'#000'} />
-      <Text style={{ fontFamily: 'NotoMedium', fontSize: 25 }}>
+      <Text style={{ fontFamily: 'NotoMedium', fontSize: 22 }}>
         No trips planned yet
       </Text>
       <Text
         style={{
           fontFamily: 'NotoMedium',
-          fontSize: 16,
+          fontSize: 14,
           textAlign: 'center',
           color: Colors.GRAY,
         }}
@@ -32,7 +32,7 @@ export default function StartNewTripCard() {
       <TouchableOpacity
         onPress={() => router.push('/create-trip/search-place')}
         style={{
-          padding: 15,
+          padding: 10,
           backgroundColor: Colors.PRIMARY,
           borderRadius: 15,
           paddingHorizontal: 30,
@@ -42,7 +42,7 @@ export default function StartNewTripCard() {
           style={{
             color: Colors.WHITE,
             fontFamily: 'NotoMedium',
-            fontSize: 17,
+            fontSize: 16,
           }}
         >
           Start a new trip

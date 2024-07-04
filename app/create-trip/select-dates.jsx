@@ -46,13 +46,14 @@ export default function SelectDates() {
         totalTripDays,
       },
     });
+    router.push('/create-trip/select-budget');
   };
 
   return (
     <View
       style={{
         padding: 25,
-        paddingTop: 75,
+        paddingTop: 50,
         backgroundColor: Colors.WHITE,
         height: '100%',
       }}

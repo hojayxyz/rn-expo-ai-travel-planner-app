@@ -54,7 +54,8 @@ export default function SearchPlace() {
           textInputContainer: {
             borderWidth: 1,
             borderRadius: 5,
-            marginTop: 50,
+            marginTop: 30,
+            paddingHorizontal: 10,
           },
         }}
       />
