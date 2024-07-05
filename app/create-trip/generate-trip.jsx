@@ -3,7 +3,7 @@ import { Colors } from '../../constants/Colors';
 import { useContext, useEffect, useState } from 'react';
 import { CreateTripContext } from '../../context/CreateTripContext';
 import { AI_PROMPT } from '../../constants/Options';
-import { router } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { chatSession } from '../../configs/AiModal';
 import { auth, db } from '../../configs/FirebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
@@ -13,6 +13,7 @@ export default function GenerateTrip() {
   const { tripData, setTripData } = useContext(CreateTripContext);
   const [loading, setLoading] = useState(false);
   const user = auth.currentUser;
+  const router = useRouter();
 
   useEffect(() => {
     GenerateAiTrip();
