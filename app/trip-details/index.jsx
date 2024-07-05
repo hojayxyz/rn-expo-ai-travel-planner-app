@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { Colors } from '../../constants/Colors';
 import moment from 'moment';
-import FlightInfo from '../../components/TripDetails/FlightInfo';
 import HotelList from '../../components/TripDetails/HotelList';
 import PlannedTrip from '../../components/TripDetails/PlannedTrip';
 
@@ -77,7 +76,10 @@ export default function TripDetails() {
           {/* Flight Info */}
           {/* <FlightInfo flightData={tripDetails?.tripPlan?.flight} /> */}
           {/* Hotels Info */}
-          <HotelList hotelList={tripDetails?.tripPlan?.hotels} />
+          <HotelList
+            hotelList={tripDetails?.tripPlan?.hotels}
+            nearby={tripDetails?.tripData?.locationInfo?.name}
+          />
           {/* Trip Day Planner Info */}
           <PlannedTrip details={tripDetails?.tripPlan?.dailyPlan} />
         </View>
